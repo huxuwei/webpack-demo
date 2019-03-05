@@ -122,5 +122,45 @@ module: {
   ]
 ```
 
+8、用`clean-webpack-plugin`在打包前清除之前的打包文件
+```
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+
+plugins: [
+  new CleanWebpackPlugin()
+]
+```
+
+9、使用`file-loader`处理文件
+安装`yarn add file-loader`
+
+```
+modules: {
+  rules: [
+   {
+      test: /\.(png|jpe?g|gif)$/,
+      loader: 'file-loader',
+    }
+  ]
+}
+```
+
+10、开启`webpack-dev-server`
+
+安装`yarn add webpack-dev-server`
+```
+devServer: {
+  contentBase: './dist',
+   hot: true
+},
+plugins: [
+  new Webpack.HotModuleReplacementPlugin()
+]
+```
+
+
+
+
+
 
 
